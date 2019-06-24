@@ -1,0 +1,76 @@
+<html>
+<head>
+	<title>Notifier</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/momentjs/2.14.1/moment.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	
+	  
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm"></div>
+			<div class="col-sm">
+			<h1>EVENT APP</h1>
+			<br>
+			<br>
+
+			<form method="POST" action="">
+		
+		<div class="form-group">
+			<label class="control-label">Enter Event</label>
+			<input type="text" class="form-control" name="event" id="event_name" placeholder="your event">
+			<div id="message"></div>
+		</div>
+		<div class="form-group">
+			<label class="control-label">Enter Event Description</label>
+			<textarea class="form-control" name="event_description" id="description" placeholder="your description" rows=3></textarea>
+			<div id="message"></div>
+		</div>
+		<div class="form-group">
+                  <label class="control-label">Time</label>
+                  <div class='input-group date' id='datetimepicker'>
+                     <input type='text' class="form-control" name="datetime" />
+                     <span class="input-group-addon">
+                     <span class="glyphicon glyphicon-calendar"></span>
+                     </span>
+                  </div>
+               </div>
+        
+			
+	
+
+		
+		<input type="Submit" value="Add" id="add">
+
+		<script>
+			// This is the script to get the value of input text
+			$("#task").keydown(function() {
+				$("#message").text($("#task").val())
+			})
+			///////////////////////////////////////////////////
+  			$(function () {
+    		$('#datetimepicker').datetimepicker();
+ 				});
+		</script>
+	</form>
+	<form method='POST' action="/gmail">
+				<input type="Submit" value="done" id="done">
+			</form>
+	<h5>THR EVENTS</h5>
+	{% for eventlist in events %}
+		<p>{{eventlist.event_name}}</p>
+		<br>
+	{% endfor %}
+
+</div>
+
+
+
+		<div class="col-sm"></div>
+	</div>

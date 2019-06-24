@@ -1,0 +1,50 @@
+<html>
+<head>
+	<title>Notifier</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/momentjs/2.14.1/moment.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	
+	  
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm"></div>
+			<div class="col-sm">
+			<h1>EVENT APP</h1>
+			<br>
+			<br>
+			<h4>ADD GMAILS</h4>
+
+			<form method="POST" action="">
+				<div class="form-group">
+					<label class="control-label">Enter Email-Id</label>
+					<input type="email" class="form-control" name="email_id" id="email" placeholder="abcd@xyz.com">
+					 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+			
+				</div>
+
+		
+				<input type="Submit" value="Add" id="add">
+			</form>
+			<form method='POST' action="/gmail/done">
+				<input type="Submit" value="done" id="done">
+			</form>
+			<h5>The GMAILS Are</h5>
+			{% for maillist in emails %}
+				<p>{{maillist.mail_id}}</p>
+				<p>{{maillist.user_id}}</p>
+			{% endfor%}
+			</div>
+			<div class="col-sm"></div>
+	
+	<h4> THE GMAILS ARE </h4>
+</div>
+
+
+</body>
